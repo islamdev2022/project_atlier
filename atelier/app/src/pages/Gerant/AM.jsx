@@ -107,7 +107,7 @@ const handleSubmit = (event) => {
       {option==="Ajouter" && <p className="text-2xl text-green font-bold p-3 text-center">Ajouter un Nouveau utilisateur</p>}
       {option==="Modifier" && <p className="text-2xl text-green font-bold p-3 text-center">Modification</p>}
 
-  <form className="flex mt-6 p-4 h-4/5 bg-zinc-200 rounded-lg justify-around " onSubmit={handleSubmit} onReset={handleReset}>
+  <form className="flex mt-4 p-4 h-[25rem] al:h-[32rem] lg:h-[40rem] 2lg:h-[50rem] bg-zinc-200 rounded-lg justify-around" onSubmit={handleSubmit} onReset={handleReset}>
     <div className="flex flex-col gap-10 w-1/3">
     {option ==='Modifier' && <div>
         <label htmlFor="text" className="flex">Id</label>
@@ -150,9 +150,9 @@ const handleSubmit = (event) => {
   </select>
 
             </div> */}
-            <div className="flex gap-10">
-                {option==="Ajouter" && <button type="submit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/3 mt-32" id="ajoute" >Ajouter</button> }
-                {option==="Modifier" && <button type="submit" id="edit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/3 mt-32">Modifier</button> }
+            <div className="flex gap-10 al:mt-24 lg:mt-56 2lg:mt-96">
+                {option==="Ajouter" && <button type="submit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/3 " id="ajoute" >Ajouter</button> }
+                {option==="Modifier" && <button type="submit" id="edit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/3">Modifier</button> }
 
                 <button type="reset" className=" p-2 bg-white rounded-sm text-green font-bold w-1/3 mt-32">Anuller</button>
             </div>
@@ -184,7 +184,7 @@ const handleSubmit = (event) => {
   </select>
     </div>
     <div>
-    {option==="Modifier" && <button className="p-2 bg-white rounded-sm text-green font-bold w-1/3 mt-32 float-right" onClick={retourRE}>Retour</button>}
+    {option==="Modifier" && <button className="p-2 bg-white rounded-sm text-green font-bold w-1/3 al:mt-24 lg:mt-56 2lg:mt-96 float-right" onClick={retourRE}>Retour</button>}
     </div>
     </div>
 
