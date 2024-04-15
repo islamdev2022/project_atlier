@@ -46,23 +46,23 @@ const Produit = ({option}) => {
     return (
         <div>
             
-            <p className="text-2xl text-green font-bold relative top-3 text-center">Liste des Produits</p>
+            <p className="text-2xl text-green font-bold relative sl:top-3 text-center">Liste des Produits</p>
             {option ==="p" && <>
-            <div className="grid grid-cols-4 gap-4 mt-10 place-items-center ">
+            <div className="grid grid-cols-4 gap-2 sl:gap-4  mt-5 sl:mt-10 lg:gap-24 2lg:gap-32 place-items-center ">
                 {getPaginatedItems().map((item, index) => (
                     <Items key={index} nom={item.name} ND={item.number1} NU={item.number2} option="p"/>
                 ))}
             </div>
             </>}
             {option ==="declarer" && <>
-            <div className="grid grid-cols-4 gap-4 mt-10 place-items-center ">
+            <div className="grid grid-cols-4 gap-2 sl:gap-4  mt-5 sl:mt-10 lg:gap-24 2lg:gap-32 place-items-center ">
                 {getPaginatedItems().map((item, index) => (
                     <Items key={index} nom={item.name} NU={item.number2} option="declarer"/>
                 ))}
             </div>
             </>}
             {option ==="signaler" && <>
-            <div className="grid grid-cols-4 gap-4 mt-10 place-items-center">
+            <div className="grid grid-cols-4 gap-2 sl:gap-4  mt-5 sl:mt-10 lg:gap-24 2lg:gap-32 place-items-center">
                 {getPaginatedItems().map((item, index) => {
                     // Calculate the actual index of the item in fakeItems array
                     const actualIndex = index + (currentPage - 1) * itemsPerPage;

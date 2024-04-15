@@ -4,7 +4,7 @@ const CalculerR = () => {
       <p className="text-2xl text-green font-bold p-3 text-center">
         Calculer le Revenu
       </p>
-      <table className="rounded-2xl bg-white h-[32rem] border-slate-400">
+      <table className="rounded-2xl bg-white  h-[25rem] al:h-[32rem] lg:h-[40rem] 2lg:h-[50rem] xl:h-[60rem] border-slate-400">
         <tr className="roundde-2xl">
           <td className="text-2xl text-green font-bold p-5 text-center w-1/3 border-r rounded-2xl">
             La Boit de Paiment

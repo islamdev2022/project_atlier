@@ -59,7 +59,7 @@ if (retour.active){
   
       <p className="text-2xl text-green font-bold p-3 text-center">Modification de Salaire</p>
     
-  <form className="flex mt-4 p-4 h-4/5 bg-zinc-200 rounded-lg justify-around " onSubmit={handleSubmit} onReset={handleReset}>
+  <form className="flex mt-4 p-4  h-[25rem] al:h-[32rem] lg:h-[40rem] 2lg:h-[50rem] bg-zinc-200 rounded-lg justify-around " onSubmit={handleSubmit} onReset={handleReset}>
     <div className="flex flex-col gap-10 w-1/3">
         <div>
             <label htmlFor="text" className="flex ">Nom</label>
@@ -72,10 +72,10 @@ if (retour.active){
                 <p className="hidden">{formData.id=id}</p>
             </div>
        </div>
-            <div className="flex gap-10 mt-28">
-                 <button type="submit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/3 mt-32">Modifier</button> 
+            <div className="flex gap-10 mt-28 al:mt-56 lg:mt-80 2lg:mt-96">
+                 <button type="submit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/3">Modifier</button> 
 
-                <button type="reset" className=" p-2 bg-white rounded-sm text-green font-bold w-1/3 mt-32">Anuller</button>
+                <button type="reset" className=" p-2 bg-white rounded-sm text-green font-bold w-1/3 ">Anuller</button>
             </div>
             
 
@@ -95,8 +95,8 @@ if (retour.active){
         <label htmlFor="text" className="flex">Salaire</label>
     <input className="border p-2 mr-2 rounded-md flex justify-start w-4/5" type="number" placeholder="$" name="mdb" value={formData.mdb} onChange={handleChange} />
     </div>
-    <div className="flex gap-10 mt-28">
-    <button className=" p-2 bg-green rounded-sm text-white font-bold w-1/3 mt-32" onClick={retourGP}>Retour</button>
+    <div className="flex gap-10 mt-28 al:mt-56 lg:mt-80 2lg:mt-96">
+    <button className=" p-2 bg-green rounded-sm text-white font-bold w-1/3 " onClick={retourGP}>Retour</button>
 </div>
     </div>
     

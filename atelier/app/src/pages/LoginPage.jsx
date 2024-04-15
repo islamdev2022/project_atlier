@@ -1,11 +1,4 @@
 import React, { useState,useEffect } from "react";
-import { Link } from "react-router-dom";
-import Stock from "./Gerant/Stock/Stock";
-import Comptabilite from "./Gerant/Comptabilite/Comptabilite";
-import Medcine from "./Medcine/Medcine";
-import Agent from "./Agent/Agent";
-import Home from "./Gerant/home";
-import Personnel from "./Gerant/Personnel/Personnel";
 import {loginus} from "../js/loginus";
 //import { useNavigate } from "react-router-dom";
 //import soio from "../server/socket.io";

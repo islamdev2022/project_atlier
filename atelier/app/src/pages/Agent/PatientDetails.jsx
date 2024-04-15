@@ -18,44 +18,44 @@ if (retour.active){
       <p className="text-2xl text-green font-bold relative top-3 text-center">
           Information De Patient
         </p>
-        <div className="flex p-4 h-fit bg-white rounded-lg justify-around mt-10 ">
+        <div className="font-bold flex p-4 h-[29rem] al:h-[32rem] lg:h-[40rem] 2lg:h-[50rem] text-md sl:text-xl bg-white rounded-lg justify-around mt-10 ">
           <div className="flex flex-col gap-10 w-1/3 p-6 ">
             <div className="flex flex-col justify-start">
-              <p className="  text-slate-500 text-xl items-start">Nom</p>
-              <p className="font-bold text-xl pt-4">{id} nom</p>
+              <p className="  text-slate-500 items-start">Nom</p>
+              <p className=" pt-4">{id} nom</p>
             </div>
             <div>
               <p className="  text-slate-500 text-xl">Prenom</p>
-              <p className="font-bold text-xl pt-4">{id} nom</p>
+              <p className=" pt-4">{id} nom</p>
             </div>
             <div>
               <p className="  text-slate-500 text-xl">ID</p>
-              <p className="font-bold text-xl pt-4">{id} nom</p>
+              <p className=" pt-4">{id} nom</p>
             </div>
 
             <div>
               <p className="  text-slate-500 text-xl">Numero Telephone</p>
-              <p className="font-bold text-xl pt-4">{id} nom</p>
+              <p className=" pt-4">{id} nom</p>
             </div>
           </div>
-          <hr className="h-96 w-[1px] bg-slate-400" />
+          <hr className="h-full w-[1px] bg-slate-400" />
 
           <div className="flex flex-col gap-10 w-1/3 p-6 ">
           <div>
-              <p className="  text-slate-500 text-xl">Date De naissance</p>
-              <p className="font-bold text-xl pt-4">{id.nom} nom</p>
+              <p className="  text-slate-500">Date De naissance</p>
+              <p className="  pt-4">{id.nom} nom</p>
             </div>
             <div>
-              <p className="  text-slate-500 text-xl">Email</p>
-              <p className="font-bold text-xl pt-4">{id.nom} nom</p>
+              <p className="  text-slate-500 ">Email</p>
+              <p className=" pt-4">{id.nom} nom</p>
             </div>
             <div>
-              <p className="  text-slate-500 text-xl">Sexe</p>
-              <p className="font-bold text-xl pt-4">{id} nom</p>
+              <p className="  text-slate-500 ">Sexe</p>
+              <p className=" pt-4">{id} nom</p>
             </div>
             <div>
-              <p className="  text-slate-500 text-xl">Email</p>
-              <p className="font-bold text-xl pt-4">{id.nom} nom</p>
+              <p className="  text-slate-500 ">Email</p>
+              <p className=" pt-4">{id.nom} nom</p>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@ if (retour.active){
         <p className="text-2xl text-green font-bold relative top-3 text-center">
          Modifier les Informations De Patient
         </p>
-        <form className="flex p-4 bg-white rounded-lg justify-around mt-10 text-lg ">
+        <form className="flex p-4 h-[29rem] al:h-[32rem] lg:h-[40rem] 2lg:h-[50rem] xl:h-[60rem] text-md 2lg:text-xl bg-white rounded-lg justify-around mt-10 text-lg ">
           <div className="flex flex-col gap-10 w-1/2 py-6 ">
             <div className="flex justify-start">
               <p className=" text-green font-semibold items-center flex w-28">Nom</p>
@@ -85,14 +85,14 @@ if (retour.active){
               <p className="  text-green font-semibold items-center flex w-28">Telephone</p>
               <input required type="number" className=" rounded-sm bg-slate-100 p-2 outline-green" placeholder="0543.."/>
             </div>
-            <div className="flex mt-8 gap-8">
+            <div className="flex mt-8 gap-8 al:mt-12 lg:mt-48 2lg:mt-80 xl:mt-96">
                 <button type="submit" className="  bg-green rounded-sm text-white font-semibold w-1/4 ">Enregistrer</button> 
-                <button type="reset" className=" p-2 bg-gray-light rounded-sm text-green font-semibold w-1/4">Supprimer</button>
+                <button className=" p-2 bg-gray-light rounded-sm text-green font-semibold w-1/4">Supprimer</button>
          
             </div>
              </div>
 
-          <hr className=" h-96 w-[1px] bg-slate-400" />
+          <hr className=" h-full w-[1px] bg-slate-400" />
 
           <div className="flex flex-col gap-10 w-1/2 py-6 pl-3 ">
           <div className="flex justify-start ">
@@ -122,7 +122,7 @@ if (retour.active){
 
               </select>
             </div>
-            <div className="flex mt-8 gap-8 justify-end">
+            <div className="flex mt-8 gap-8 al:mt-12 lg:mt-48 2lg:mt-80 xl:mt-96 justify-end">
             <button className=" p-2 bg-green rounded-sm text-white font-semibold w-1/4 " onClick={retourGP}>Retour</button>
             </div>
           </div>
@@ -135,7 +135,7 @@ if (retour.active){
         <p className="text-2xl text-green font-bold relative top-3 text-center">
         Ajouter Un Patient
         </p>
-        <form className="flex p-4 bg-white rounded-lg justify-around mt-10 text-lg">
+        <form className="flex p-4 h-[29rem] al:h-[32rem] lg:h-[40rem] 2lg:h-[50rem] xl:h-[60rem] text-md 2lg:text-xl bg-white rounded-lg justify-around mt-10 text-lg">
           <div className="flex flex-col gap-10 w-1/2 py-6 ">
             <div className="flex justify-start">
               <p className=" text-green font-semibold  items-center flex w-28">Nom</p>
@@ -154,14 +154,14 @@ if (retour.active){
               <p className="  text-green font-semibold items-center flex w-28">Telephone</p>
               <input required type="number" className="  rounded-sm bg-slate-100 p-2 outline-green" placeholder="0543.."/>
             </div>
-            <div className="flex mt-8 gap-8">
+            <div className="flex mt-8 gap-8 al:mt-12 lg:mt-48 2lg:mt-80">
                 <button type="submit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/4 hover:shadow-green">Ajouter</button> 
                 <button type="reset" className=" p-2 bg-gray-light rounded-sm text-green font-bold w-1/4">Supprimer</button>
          
             </div>
              </div>
 
-          <hr className="h-96 w-[1px] bg-slate-400" />
+          <hr className="h-full w-[1px] bg-slate-400" />
 
           <div className="flex flex-col gap-10 w-1/2 py-6 pl-3 ">
           <div className="flex justify-start ">
@@ -188,7 +188,6 @@ if (retour.active){
                 <option value={"0-"}>A+</option>
                 <option value={"0-"}>AB-</option>
                 <option value={"0-"}>AB+</option>
-
               </select>
             </div>
           </div>

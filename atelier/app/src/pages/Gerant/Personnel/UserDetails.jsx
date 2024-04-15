@@ -1,16 +1,16 @@
 import Afficher from "../Afficher"
 import { useState } from "react"
-const UserDetails = ({id,username,nom,prenom,role,password}) => {
+const UserDetails = ({id}) => {
    const [selectedRowId, setSelectedRowId] = useState(null);
   const [selectedRowCount, setSelectedRowCount] = useState(0)
   const [retour,setRetour] = useState({active : false})
 
   // Add state to track the selected row and its ID
+ 
 
+  
 
-
-
-
+  
   // Define a callback function to update the selected row ID
   const handleRowSelection = (id ,count) => {
     setSelectedRowId(id);
@@ -18,7 +18,7 @@ const UserDetails = ({id,username,nom,prenom,role,password}) => {
   };
 const retourGP =() =>{
     setRetour({active:true})
-}
+} 
 if (retour.active){
     return (
     <Afficher choice="Personnel" onRowSelect={handleRowSelection} exitretour={() => setRetour({ active: false })}></Afficher>
@@ -31,37 +31,33 @@ if (retour.active){
         <p className="text-2xl text-green font-bold relative top-3 text-center">
           Information Personnel
         </p>
-        <div className="flex p-4 h-fit bg-white rounded-lg justify-around mt-12 ">
-          <div className="flex flex-col gap-20 w-1/3 p-6 ">
+        <div className="text-slate-500 font-bold flex p-4 h-[26rem] al:h-[32rem] lg:h-[40rem] 2lg:h-[50rem] text-md sl:text-xl bg-white rounded-lg justify-around mt-10 ">
+          <div className="flex flex-col gap-4 sl:gap-10 al:gap-12 lg:gap-20 2lg:gap-24 w-1/3 p-6 ">
             <div className="flex flex-col justify-start">
-              <p className="  text-slate-500 text-xl items-start">Id</p>
-              <p className="font-bold text-xl pt-4">{id} </p>
+              <p className="items-start">Nom</p>
+              <p className=" pt-4">{id} nom</p>
             </div>
 
             <div>
-              <p className="  text-slate-500 text-xl">username</p>
-              <p className="font-bold text-xl pt-4">{username}</p>
+              <p>ID</p>
+              <p className=" pt-4">{id.nom} nom</p>
             </div>
 
             <div>
-              <p className="  text-slate-500 text-xl">nom</p>
-              <p className="font-bold text-xl pt-4">{nom} </p>
+              <p >Specialite</p>
+              <p className=" pt-4">{id.nom} nom</p>
             </div>
           </div>
-          <hr className="h-96 w-[1px] bg-slate-400" />
+          <hr className="h-full w-[1px] bg-slate-400" />
 
           <div className="flex flex-col gap-20 w-1/3 p-6 ">
           <div>
-              <p className="  text-slate-500 text-xl">Prenom</p>
-              <p className="font-bold text-xl pt-4">{prenom} </p>
+              <p>Prenom</p>
+              <p className=" pt-4">{id.nom} nom</p>
             </div>
             <div>
-              <p className="  text-slate-500 text-xl">Specialite</p>
-              <p className="font-bold text-xl pt-4">{role} </p>
-            </div>
-            <div>
-              <p className="  text-slate-500 text-xl">password</p>
-              <p className="font-bold text-xl pt-4">{password} </p>
+              <p>Mot De Pass</p>
+              <p className="pt-4">{id.nom} nom</p>
             </div>
           </div>
         </div>
@@ -70,5 +66,5 @@ if (retour.active){
       </>
     );
 }
-
+ 
 export default UserDetails;

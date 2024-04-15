@@ -83,7 +83,7 @@ const GererS = ({ onRowSelect }) => {
         List des Salaires
       </p>
       <div className="w-full flex mt-10">
-        <div className="scrollbar-thumb-rounded-full bg-white h-[32rem] rounded-l-lg scrollbar-thumb-green-cyan overflow-y-scroll w-full">
+        <div className="scrollbar-thumb-rounded-full bg-white  h-[25rem] al:h-[32rem] lg:h-[40rem] 2lg:h-[50rem] xl:h-[60rem] rounded-l-lg scrollbar-thumb-green-cyan overflow-y-scroll w-full">
           <table className="text-xl bg-gradient-to-t text-slate-600 font-semibold rounded-tl-lg w-full text-center">
             <tbody>
             <tr className="h-10 sticky top-0 w-fit bg-green-cyan rounded-lg">

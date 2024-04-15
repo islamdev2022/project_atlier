@@ -38,38 +38,39 @@ const handleRowSelection = (id ,count) => {
     }
   };
     return ( 
-    <div className="flex  bg-gray-light w-fit">
-        <div className="w-1/5 bg-gradient-to-t from-green-cyan1 to-green-dark1 h-screen rounded-e-2xl">
+    <div className="flex  bg-gray-light w-full">
+        <div className="w-1/4 bg-gradient-to-t from-green-cyan1 to-green-dark1 h-screen rounded-e-2xl">
        <Link to='/home'> <IoArrowBackSharp className="text-white text-3xl m-2 absolute"/></Link>
              <div className="h-screen">
             <div className=" h-1/4  flex justify-center ">
-            <div className="mt-6">
-            <img src="assets/compte.png" alt="profile" className="w-28 h-28 "/>
+            <div className="flex flex-col justify-center">
+            <img src="/assets/compte.png" alt="profile" className="w-28 h-28 "/>
             <h1 className="font-bold text-white text-center">GERANT</h1>
             </div>
             </div>
             
        <div className=" h-2/4 flex-col justify-center">
         <hr className='bg-white h-1'/>
-        <h1 className='text-2xl font-bold text-white underline pt-3 text-center'>Gestion de Stock</h1>
-        <ul className="pt-5">
-             <li className={`flex items-center w-60 px-3 float-right gap-5 mb-2 py-1 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
+        <h1 className='sl:text-xl al:text-2xl  font-bold text-white underline pt-3 text-center'>Gestion de Stock</h1>
+        <ul className="font-bold text-white text-md sl:text-xl pt-8 flex flex-col float-right w-full al:w-64 2lg:w-full justify-center ">
+             <li className={`flex items-center 2lg:justify-center px-1 float-right gap-5 mb-2 py-1 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
              ${activeItem === 'item1' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item1')}>
-            <img src="assets/lanalyse-des-donnees copy.png" alt="afficher" className="w-10"/>
-            <h1 className="font-bold text-white text-xl">AFFICHER</h1>
+            <img src="/assets/lanalyse-des-donnees copy.png" alt="afficher" className="w-10"/>
+            <h1>AFFICHER</h1>
         </li>
-        <li className={`flex items-center w-60 px-3 float-right gap-5 py-1 mb-2 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
+        <li className={`flex items-center 2lg:justify-center px-1 float-right gap-5 mb-2 py-1 hover:bg-green-cyan hover:cursor-pointer rounded-s-lg 
         ${activeItem === 'item2' ? 'bg-green-cyan' : ''}`} onClick={() => setActiveItem('item2')}>            
        <MdAddShoppingCart className=' text-white size-10'/>
-            <h1 className="font-bold text-white text-xl">AJOUTER</h1>
+            <h1>AJOUTER</h1>
         </li>
         </ul>
        
        </div>
-       <hr className='bg-white h-1 w-1/5 absolute'/>
-       <div className=" h-1/4 flex justify-center rounded-ee-2xl items-center ">
+      
+       <div className=" h-1/4 flex flex-col justify-center rounded-ee-2xl items-center ">
+       <hr className='bg-white h-1 w-full relative bottom-8 '/>
         <div className=" py-3">
-            <img src="assets/logo logiciel.png" alt="logo"  className="w-16 -rotate-45 ml-2 mb-2"/>
+            <img src="/assets/logo logiciel.png" alt="logo"  className="w-16 -rotate-45 ml-2 mb-2"/>
             <p className="text-white font-bold">Version 1.0</p>
         </div>
         
@@ -77,9 +78,9 @@ const handleRowSelection = (id ,count) => {
         </div> 
         </div> 
         <div className="w-2 h-screen ml-2 bg-green-dark1"></div>
-        <div className="table h-fit mx-auto">
+        <div className="table h-fit mx-auto w-full px-12">
             <Header choice="stock" user="gerant"></Header>
-        <div className="w-full  p-4">
+        <div className="w-full pt-4">
         {/* Render the active component */}
         {renderComponent()}
       </div>

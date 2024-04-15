@@ -33,6 +33,11 @@ const Header = ({user ,choice}) => {//possible an attribute to define where the 
         e.preventDefault();
         console.log("this is for the agent search", searchTerm)
       }
+
+      const handleSearchBiologist = (e) => {
+        e.preventDefault();
+        console.log("this is for the agent search", searchTerm)
+      }
   const [showAlert, setShowAlert] = useState(false);
 
   const handleClose = () => {
@@ -45,7 +50,7 @@ const Header = ({user ,choice}) => {//possible an attribute to define where the 
   };
 
 
-    return (  <div className={`flex h-fit mt-10 ml-4 items-center  ${choice==="stock" || choice==="comptabilite"? 'gap-[225px]' : 'gap-[112px]'} w-fit`}>
+    return (  <div className={`flex h-fit mt-10  justify-between items-center  w-full`}>
     <h1 className="text-3xl font-bold text-white bg-green-dark1 p-1 h-fit rounded-sm px-3 ">Laboratoire</h1>
     <form className="h-10 flex gap-1">
       {choice === "personnel" && <> <select required className="rounded-s-md font-semibold text-green outline-none">
@@ -62,12 +67,13 @@ const Header = ({user ,choice}) => {//possible an attribute to define where the 
     { choice==="comptabilite" &&  <IoIosSearch type="submit" className="w-8 h-10 bg-transparent relative right-10 cursor-pointer text-green" onClick={handleSearchC}/>}
     { user==="medcin" &&  <IoIosSearch type="submit" className="w-8 h-10 bg-transparent relative right-10 cursor-pointer text-green" onClick={handleSearchMedcin}/>}
     { user==="agent" &&  <IoIosSearch type="submit" className="w-8 h-10 bg-transparent relative right-10 cursor-pointer text-green" onClick={handleSearchAgent}/>}
+    { user==="biologist" &&  <IoIosSearch type="submit" className="w-8 h-10 bg-transparent relative right-10 cursor-pointer text-green" onClick={handleSearchBiologist}/>}
 
-    <img src="assets/notification copy (1).png" alt="notification" className='size-8 mt-1 ml-[30px]' />
+    <img src="/assets/notification copy (1).png" alt="notification" className='size-8 mt-1 ml-[30px] cursor-pointer' />
     <span className="text-xs relative right-4 bg-red-600 text-white font-semibold h-4 w-3 justify-center items-center flex rounded-2xl">1</span>
     <div className="relative">
       <img
-        src="assets/parametres-gear copy.png"
+        src="/assets/parametres-gear copy.png"
         alt="parameter"
         className="ml-2 mt-1 hover:cursor-pointer size-8"
         onMouseEnter={() => setIsHovered(true)}
@@ -79,6 +85,7 @@ const Header = ({user ,choice}) => {//possible an attribute to define where the 
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onClick={() => setShowAlert(true)}
+          type="button"
         >
           Deconexion
         </button>

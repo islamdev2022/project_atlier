@@ -9,6 +9,7 @@ import LoginPage from './pages/LoginPage';
 import Stock from "./pages/Gerant/Stock/Stock";
 import Comptabilite from "./pages/Gerant/Comptabilite/Comptabilite";
 import Personnel from "./pages/Gerant/Personnel/Personnel";
+import Biologist from './pages/Biologist/Biologist';
 import React, { useEffect } from 'react';
 import io from 'socket.io-client';
 
@@ -34,11 +35,12 @@ function App() {
         <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/home" element={<Home />} />
-          <Route path="/home/Personnel" element={<Personnel />} />
-          <Route path="/home/Stock" element={<Stock />} />
-          <Route path="/home/comptabilite" element={<Comptabilite />} />
-          <Route path="/medcine" element={<Medcine />} />
-          <Route path="/Agent" element={<Agent />} />
+        <Route path="/home/Personnel" element={<Personnel />} />
+        <Route path="/home/Stock" element={<Stock />} />
+        <Route path="/home/comptabilite" element={<Comptabilite />} />
+        <Route path="/medcine" element={<Medcine />} />
+        <Route path="/Agent" element={<Agent />} />
+        <Route path="/Biologist" element={<Biologist />} />
         </Routes>
       </Router>
 

@@ -11,21 +11,21 @@ function signalItem() {
     // if it needs to be aware of the signal state.
 }
     return ( 
-    <div className="w-fit py-3 h-56 bg-white rounded-xl text-center">
-        <div className="flex flex-col  items-center w-44">
+    <div className="w-52 py-2 h-56 lg:h-72 bg-white rounded-xl text-center">
+        <div className="flex flex-col  items-center w-full">
             <div className="py-2">
                 <img src="assets/compte.png" alt="test" className="w-10 table mx-auto"/>
                 <p>{nom}</p>
             </div>
-            <hr className="text-slate-500 w-44 "/>
+            <hr className="text-slate-500 w-full "/>
         {option ==="p" && <>
-        <div className="py-2">
+        <div className="py-2 lg:py-6">
                 <p>Disponible</p>
                 <p>{ND}</p>
             </div>
             
-            <hr className="text-slate-500 w-44 "/>
-            <div className="py-2">
+            <hr className="text-slate-500 w-full "/>
+            <div className="py-4">
                 <p>Utilisee</p>
                 <p>{NU}</p>
             </div>

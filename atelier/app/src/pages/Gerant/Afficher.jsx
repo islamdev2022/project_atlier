@@ -199,9 +199,9 @@ const [selectAll, setSelectAll] = useState(false);
     </div></>}
     {choice==="Personnel" && <>
     <p className="text-2xl text-green font-bold relative top-3 text-center">List des Utilisateurs</p>
-    <div className="w-full flex gap-4 mt-12">
+    <div className="w-full flex gap-4 mt-10">
 
-      <div className="scrollbar-thumb-rounded-full bg-white h-[32rem] rounded-l-lg scrollbar-thumb-green-cyan overflow-y-scroll w-full">
+      <div className="sscrollbar-thumb-rounded-full bg-white  h-[25rem] al:h-[32rem] lg:h-[40rem] 2lg:h-[50rem] rounded-l-lg scrollbar-thumb-green-cyan overflow-y-scroll w-full">
         <table className="text-xl bg-gradient-to-t text-slate-600 font-semibold rounded-tl-lg w-full text-center">
         <thead>
 
@@ -222,7 +222,7 @@ const [selectAll, setSelectAll] = useState(false);
         </thead>
         <tbody>
           {rowData.map(user => (
-            <tr data-user-id={user.N}>
+            <tr data-user-id={user.N} className="h-16 cursor-pointer hover:bg-slate-200 border-y " >
               <td>{user.N}</td>
               <td>{user.username}</td>
               <td>{user.nom}</td>

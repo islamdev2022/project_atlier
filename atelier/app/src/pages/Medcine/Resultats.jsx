@@ -22,9 +22,12 @@ const Resultats = () => {
   const [selectAll, setSelectAll] = useState(false);
   const [showAlertNT, setShowAlertNT] = useState(false);
   const [showAlertVA, setShowAlertVA] = useState(false);
+  const [showAlertVAT, setShowAlertVAT] = useState(false);
   const [isHoveredA, setIsHoveredA] = useState(null);
   const [isHoveredN, setIsHoveredN] = useState(null);
   const [isHoveredV, setIsHoveredV] = useState(null);
+  const [ID,getID]=useState(null)
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const handleMouseMove = (event) => {
     setMousePosition({
@@ -36,12 +39,18 @@ const Resultats = () => {
   const handleClose = () => {
     setShowAlertNT(false);
     setShowAlertVA(false);
+    setShowAlertVAT(false);
   };
 
-  const handleContinueNT = () => {
+
+
+  const handleContinueNT = (ID) => {
     // Add logic to proceed with the action for the Request new test
   };
-  const handleContinueVA = () => {
+  const handleContinueVA = (ID) => {
+    // Add logic to proceed with the action for Test validation
+  };
+  const handleContinueVAT = (ID) => {
     // Add logic to proceed with the action for Test validation
   };
 
@@ -58,7 +67,8 @@ const Resultats = () => {
     const newSelectedRows = selectedRows.includes(N)
       ? selectedRows.filter((id) => id !== N)
       : [...selectedRows, N];
-
+    console.log(N)//this is the id of the row
+    console.log(newSelectedRows)// this is the array of selected rows
     setSelectedRows(newSelectedRows);
     setSelectAll(newSelectedRows.length === rowData.length);
   };
@@ -88,7 +98,7 @@ const Resultats = () => {
         List des Analyse
       </p>
       <div className="w-full flex mt-10">
-        <div className="scrollbar-thumb-rounded-full bg-white h-[32rem] rounded-l-lg scrollbar-thumb-green-cyan overflow-y-scroll w-full">
+      <div className="scrollbar-thumb-rounded-full bg-white h-[25rem] al:h-[32rem] lg:h-[40rem] 2lg:h-[50rem] rounded-l-lg scrollbar-thumb-green-cyan overflow-y-scroll w-full">
           <table className="text-xl bg-gradient-to-t text-slate-600 font-semibold rounded-tl-lg w-full text-center ">
             <thead>
               <tr className="h-10 sticky top-0 w-fit bg-green-cyan rounded-lg z-1">
@@ -105,7 +115,17 @@ const Resultats = () => {
                 <th className="w-1/12">Age</th>
                 <th className="w-1/12">id</th>
                 <th className="w-2/12">Date</th>
-                <th className="w-2/12">Action</th>
+                <th className="w-2/12">
+                  <div className="flex justify-around">
+                  <p>Action</p>
+                  
+                    <FaCheck className=" cursor-pointer hover:bg-slate-300 size-8 p-1 rounded-2xl"
+                          onClick={() => {setShowAlertVAT(true) ; }}
+                         
+                          onMouseMove={handleMouseMove}></FaCheck>
+                  </div>
+                
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -159,7 +179,7 @@ const Resultats = () => {
                         <TbArrowsLeftRight
                           id="NT"
                           className=" cursor-pointer hover:bg-slate-300 size-8 p-1 rounded-2xl"
-                          onClick={() => setShowAlertNT(true)}
+                          onClick={() => {setShowAlertNT(true);getID(row.N) }}
                           onMouseEnter={() => setIsHoveredN(index)}
                           onMouseLeave={() => setIsHoveredN(null)}
                           onMouseMove={handleMouseMove}
@@ -179,7 +199,7 @@ const Resultats = () => {
                       <div>
                         <FaCheck
                           className=" cursor-pointer hover:bg-slate-300 size-8 p-1 rounded-2xl"
-                          onClick={() => setShowAlertVA(true)}
+                          onClick={() => {setShowAlertVA(true);getID(row.N) }}
                           onMouseEnter={() => setIsHoveredV(index)}
                           onMouseLeave={() => setIsHoveredV(null)}
                           onMouseMove={handleMouseMove}
@@ -204,16 +224,23 @@ const Resultats = () => {
                 <AlertModal
                   option="Demander de nouveaux tests"
                   onClose={handleClose}
-                  onContinue={handleContinueNT}
+                  onContinue={handleContinueNT(ID)}
                 />
               )}
               {showAlertVA && (
                 <AlertModal
-                  option="Valider les resultats"
+                  option={`Valider les resultats ` }
                   onClose={handleClose}
-                  onContinue={handleContinueVA}
+                  onContinue={handleContinueVA(ID)}
                 />
               )}
+              {
+                showAlertVAT && (<AlertModal
+                  option={`Valider tout les resultats $`}
+                  onClose={handleClose}
+                  onContinue={handleContinueVAT(ID)}>
+                </AlertModal>)
+              }
             </tbody>
           </table>
         </div>

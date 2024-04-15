@@ -24,6 +24,14 @@ module.exports = {
         'green': '0 4px 25px -8px rgba(0, 0, 0, 0.7), 0 4px 6px -10px rgba(0, 0, 0, 0.5)',
         'green-cyan1': '0 4px 25px 3px rgba(0, 0, 0, 0.7), 0 4px 6px -10px rgba(0, 0, 0, 0.5)',
       },
+      screens: {
+        'md': '768px', // This is for tablets
+        'sl': '1024px', // This is for small laptops
+        'al': '1440px', // This is for average laptops
+        'lg': '1650px', // 
+        '2lg': '1920px',
+        'xl':'2560px',
+      },
         colors: {
             'white':'#ffff',
             'green-cyan1':'#3b978a',
