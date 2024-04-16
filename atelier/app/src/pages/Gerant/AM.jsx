@@ -107,8 +107,8 @@ const handleSubmit = (event) => {
       {option==="Ajouter" && <p className="text-2xl text-green font-bold p-3 text-center">Ajouter un Nouveau utilisateur</p>}
       {option==="Modifier" && <p className="text-2xl text-green font-bold p-3 text-center">Modification</p>}
 
-  <form className="flex mt-4 p-4 h-[25rem] al:h-[32rem] lg:h-[40rem] 2lg:h-[50rem] bg-zinc-200 rounded-lg justify-around" onSubmit={handleSubmit} onReset={handleReset}>
-    <div className="flex flex-col gap-10 w-1/3">
+  <form className="flex mt-4 p-4 h-[25rem] al:h-[32rem] lg:h-[40rem] 2lg:h-[50rem] xl:h-[60rem] bg-zinc-200 rounded-lg justify-around" onSubmit={handleSubmit} onReset={handleReset}>
+    <div className="flex flex-col justify-between w-1/3">
     {option ==='Modifier' && <div>
         <label htmlFor="text" className="flex">Id</label>
          <div className="flex">
@@ -154,13 +154,13 @@ const handleSubmit = (event) => {
                 {option==="Ajouter" && <button type="submit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/3 " id="ajoute" >Ajouter</button> }
                 {option==="Modifier" && <button type="submit" id="edit" className=" p-2 bg-green rounded-sm text-white font-bold w-1/3">Modifier</button> }
 
-                <button type="reset" className=" p-2 bg-white rounded-sm text-green font-bold w-1/3 mt-32">Anuller</button>
+                <button type="reset" className=" p-2 bg-white rounded-sm text-green font-bold w-1/3">Anuller</button>
             </div>
 
 
     </div>
 
-    <div className="flex flex-col gap-10 w-1/3">
+    <div className="flex flex-col justify-between w-1/3">
       {/* <div>
             <label htmlFor="text" className="flex ">Prenom</label>
     <input required className="border p-2 mr-2 rounded-md w-4/5 flex justify-start" type="text" placeholder="Prénom" name="prenom" id='pr' onChange={handleChange}/>
@@ -194,7 +194,7 @@ const handleSubmit = (event) => {
       {option==="Ajouter" && <p className="text-2xl text-green font-bold p-3 text-center">Ajouter un Nouveau Produit</p>}
       {option==="Modifier" && <p className="text-2xl text-green font-bold p-3 text-center">Modification</p>}
 
-  <form className="flex mt-6 p-4 h-4/5 bg-zinc-200 rounded-lg justify-around " onSubmit={handleSubmit} onReset={handleReset}>
+  <form className="flex mt-6 p-4 h-[25rem] al:h-[32rem] lg:h-[40rem] 2lg:h-[50rem] xl:h-[60rem] bg-zinc-200 rounded-lg justify-around " onSubmit={handleSubmit} onReset={handleReset}>
     <div className="flex flex-col gap-10 w-1/3">
         <div>
             <label htmlFor="text" className="flex ">Nom de Produit</label>

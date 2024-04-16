@@ -1,5 +1,7 @@
 import Afficher from "../Afficher"
-import { useState } from "react"
+import { useState, } from "react"
+import { useEffect } from "react"
+import io from 'socket.io-client';
 const UserDetails = ({id}) => {
    const [selectedRowId, setSelectedRowId] = useState(null);
   const [selectedRowCount, setSelectedRowCount] = useState(0)
@@ -7,8 +9,22 @@ const UserDetails = ({id}) => {
 
   // Add state to track the selected row and its ID
  
+  const [rowData, setRowData] = useState([]);
+  useEffect(() => {
+    const socket = io('http://localhost:4000');
 
-  
+    // Handle new user data
+    socket.on('userData', (users) => {
+      setRowData(users.map(user => ({
+        N: user.idU,
+        username: user.user_name,
+        nom: user.nom,
+        prenom: user.prenom,
+        role: user.professon,
+        password: user.mot_passe
+      })));
+  })});
+
 
   
   // Define a callback function to update the selected row ID

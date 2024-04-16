@@ -20,12 +20,12 @@ const Afficher = ({onRowSelect,choice}) => {
     // Handle new user data
     socket.on('userData', (users) => {
       setRowData(users.map(user => ({
-        N: user.id,
-        username: user.username,
+        N: user.idU,
+        username: user.user_name,
         nom: user.nom,
         prenom: user.prenom,
-        role: user.role,
-        password: user.password
+        role: user.professon,
+        password: user.mot_passe
       })));
     });
 
@@ -206,17 +206,13 @@ const [selectAll, setSelectAll] = useState(false);
         <thead>
 
             <tr className="h-10 sticky top-0 w-fit bg-green-cyan rounded-lg ">
-
               <td className="w-1/12 ">ID</td>
               <td className="w-1/8">username</td>
               <td className="w-1/8">nom</td>
               <td className="w-1/8">prenom</td>
               <td className="w-1/8">role</td>
               <td className="w-1/8">password</td>
-
               <td className="w-3/8">action</td>
-
-
             </tr>
 
         </thead>

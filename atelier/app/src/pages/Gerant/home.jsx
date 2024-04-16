@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AlertModal from '../AlertModal';
 const Home = () => {
-
+console.log("home") 
     const [showAlert, setShowAlert] = useState(false);
 
   const handleClose = () => {

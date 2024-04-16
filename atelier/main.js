@@ -16,12 +16,15 @@ function createMainWindow(){
     })
     mainWindow.setMenu(null);
 
-// mainWindow.webContents.openDevTools()
+mainWindow.webContents.openDevTools()
     const startUrl = url.format({
         pathname : path.join(__dirname, './app/build/index.html'),
-        protocol:'file'
+        protocol:'file',
+        slashes: true
 
     })
+    console.log(startUrl); // This will print the full file path in the console
+
     mainWindow.loadURL(startUrl)
 }
 app.whenReady().then(createMainWindow)

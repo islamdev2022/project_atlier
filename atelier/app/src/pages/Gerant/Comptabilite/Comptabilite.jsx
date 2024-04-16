@@ -92,7 +92,7 @@ const handleRowSelection = (id ,count) => {
        <div className=" h-1/4 flex flex-col justify-center rounded-ee-2xl items-center ">
        <hr className='bg-white h-1 w-full relative bottom-8 '/>
         <div className=" py-3">
-            <img src="assets/logo logiciel.png" alt="logo"  className="w-16 -rotate-45 ml-2 mb-2"/>
+            <img src="/assets/logo logiciel.png" alt="logo"  className="w-16 -rotate-45 ml-2 mb-2"/>
             <p className="text-white font-bold">Version 1.0</p>
         </div>
         

@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
 socket.on('login', (loginData) => {
     const { username, password } = loginData;
     // Assuming 'nom' is unique and you store passwords securely
-    db.query('SELECT * FROM user WHERE username = ? AND password = ?', [username, password], (err, results) => {
+    db.query('SELECT * FROM user WHERE user_name = ? AND mot_passe = ?', [username, password], (err, results) => {
         if (err) {
             console.error('Login error', err);
             socket.emit('loginResponse', { success: false });
@@ -47,7 +47,7 @@ socket.on('login', (loginData) => {
 
 // delete user
 socket.on('deleteUser', (userId) => {
-    db.query('DELETE FROM user WHERE id = ?', [userId], (err, result) => {
+    db.query('DELETE FROM user WHERE idU = ?', [userId], (err, result) => {
         if (err) {
             console.error('Failed to delete user', err);
             socket.emit('deleteResponse', { success: false });
@@ -82,7 +82,7 @@ socket.on('deleteUser', (userId) => {
     socket.on('addUser', (newUser) => {
         const {username, nom, prenom,role, password } = newUser;
         // Assuming you have a user table with columns 'nom', 'prenom', 'password'
-        const query = 'INSERT INTO user (username,nom, prenom,role, password) VALUES (?,?,?,?,?)';
+        const query = 'INSERT INTO user (user_name,nom, prenom,professon, mot_passe) VALUES (?,?,?,?,?)';
 
         db.query(query, [username, nom, prenom,role, password], (err, result) => {
             if (err) {
@@ -96,7 +96,7 @@ socket.on('deleteUser', (userId) => {
 
         // Listen for requestUserData event
     socket.on('requestUserData', (userId) => {
-        db.query('SELECT * FROM user WHERE id = ?', [userId], (err, results) => {
+        db.query('SELECT * FROM user WHERE idU = ?', [userId], (err, results) => {
             if (err) {
                 console.error('Failed to fetch user', err);
                 return;
@@ -109,7 +109,7 @@ socket.on('deleteUser', (userId) => {
     // Listen for updateUser event
     socket.on('updateUser', (userData) => {
         const { id,username, nom, prenom,role, password } = userData;
-        db.query('UPDATE user SET username= ?, nom = ?, prenom = ?,role= ?, password = ? WHERE id = ?', [username,nom, prenom,role, password, id], (err, result) => {
+        db.query('UPDATE user SET user_name= ?, nom = ?, prenom = ?,professon= ?, mot_passe = ? WHERE idU = ?', [username,nom, prenom,role, password, id], (err, result) => {
             if (err) {
                 console.error('Failed to update user', err);
                 return;

@@ -1,7 +1,6 @@
 import './App.css';
-import Login from './pages/LoginPage';
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Medcine from "./pages/Medcine/Medcine";
 import Agent from "./pages/Agent/Agent";
 import Home from "./pages/Gerant/home";
@@ -17,12 +16,18 @@ const SERVER_URL = 'localhost:4000'; // Your Node.js server URL
 
 function App() {
   useEffect(() => {
-    const socket = io(SERVER_URL);
+    const socket = io('http://localhost:4000');
 
     socket.on('connect', () => {
       console.log('Connected to server');
           socket.emit('message', 'Hello from Electron React app');
     });
+    socket.on('error', (error) => {
+      console.error('Socket error:', error);
+   });
+    socket.on('disconnect', () => {
+      console.log('Disconnected from server');
+    });   
 
     return () => {
       socket.disconnect();

@@ -20,13 +20,13 @@ export const loginus = () => {
             if (response.success) {
               document.getElementById('loginError').style.display = 'none';
 
-              if(response.user.role=='gerant')
+              if(response.user.professon=='gerant')
               window.location.pathname= "/home";
-              else if(response.user.role=='biologiste')
+              else if(response.user.professon=='biologist' || response.user.professon=='Biologist' )
+              window.location.pathname='/Biologist';
+              else if(response.user.professon=='Medecin' || response.user.professon=='medecin')
               window.location.pathname='/medcine';
-              else if(response.user.role=='medecin')
-              window.location.pathname='/medcine';
-             else if(response.user.role=='recepcioniste')
+             else if(response.user.professon=='recepsioniste')
              window.location.pathname='/Agent';
 
 
